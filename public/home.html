@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script type="module" src="js/home_page.js"></script>
+        <title>RoomieHub - Home</title>
+    </head>
+    <body>
+        <div class = horizontal-container>
+            <h1>RoomieHub</h1>
+            <button class="header-button" onclick="openPopup('help-popup')">Help</button>
+        </div>
+        <h2>Hello, <span id="userDisplay"></span>!</h2>
+        <div class="container">
+            <div class="horizontal-container">
+                <button onclick="window.location.href = 'shopping_list.html'">Shopping List</button>
+                <button id="plus-button" onclick="openPopup('add-item-popup')">+</button>
+            </div> 
+            <button onclick="window.location.href='utilities.html'">Utilities</button> 
+        </div>
+        <button id="sign-out-button" onclick="signOut()">Sign out</button>
+        <div class="overlay" id="overlay"></div>
+        <!-- add item pop up --------------->
+        <div class="popup" id="add-item-popup">
+            <h3>Add New Item</h3>
+            <input type="text" id="new-item-input" placeholder="Enter item name" autofocus>
+            <br>
+            <button onclick="saveItem()">Add Item</button>
+            <button onclick="closePopup('add-item-popup')">Cancel</button>
+        </div>
+        <!-- help pop up --------------->
+        <div class="popup" id="help-popup">
+            <h2>Help</h2>
+            <h3>How to add an item to roommate shopping list</h3>
+            <p>
+                <strong>1.</strong> In the homescreen, click on the button titled "shopping list"
+                <br>
+                <strong>2.</strong> This will direct you to a page showing a list of items currently in the shopping list. <br>At the bottom of this list, click the "add item" button
+                <br>
+                <strong>3.</strong> A popup will appear. Enter the name of the item you wish to add.
+                <br>
+                <strong>4.</strong> Click the "add item" button at the bottom of the popup window
+                <br>
+                <strong>5.</strong> The item will appear in the shopping list, along with your username 
+            </p><br>
+            <h3>How to remove items from the roommate shopping list</h3 >
+            <p>
+                <strong>1.</strong> In the homescreen, click on the button titled "shopping list"
+                <br>
+                <strong>2.</strong> This will direct you to a page showing a list of items currently in the shopping list. <br>Ensure the list is not empty before trying to remove an item. 
+                <br>
+                <strong>3.</strong> Select an item by clicking on the box to the left of the item name. A checkmark will appear in the box.
+                <br>
+                <strong>4.</strong> Click the "remove Items(s)" button at the bottom of the shopping list
+                <br>
+                <strong>5.</strong> A popup window will appear asking for confirmation. <br> If you are sure you want to delete the items, click the "remove item(s)" button 
+                <br>
+                <strong>6.</strong> The item(s) you selected will be removed from the shopping list
+            </p>
+            <button onclick="closePopup('help-popup')">Ok!</button>
+        </div>
+        
+    </body>
+</html>

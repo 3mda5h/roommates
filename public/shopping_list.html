@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="module" src="js/shopping_list.js"></script>
+    <title>RoomieHub - Shopping List</title>
+</head>
+<body>
+    <div class="horizontal-container">
+        <button class="header-button" onclick="window.location.href='home.html'"><- Return Home</button>
+        <h1>RoomieHub</h1>
+        <button class="header-button" onclick="openPopup('help-popup')">Help</button>
+    </div>
+    <h2>Shopping List</h2>
+    <div class="container">
+        <table id="shopping-list">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Item</th>
+                    <th>Added by</th>
+                </tr>
+            </thead>
+            <tbody>   
+            </tbody>
+        </table>
+        
+        <div class="horizontal-container">
+            <button onclick="openPopup('add-item-popup')">Add Item</button>
+            <button onclick="checkRemove()">Remove Item(s)</button>
+        </div>
+        <!-- <button>Mark as bought</button> -->
+        <!-- <button>See Shopping History</button> -->
+
+         <!-- add items popup ----------------------------------------------------->
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="add-item-popup">
+            <h3>Add New Item</h3>
+            <input type="text" id="new-item-input" placeholder="Enter item name" autofocus>
+            <br>
+            <button onclick="addItem()">Add Item</button>
+            <button onclick="closePopup('add-item-popup')">Cancel</button>
+        </div>
+
+         <!-- remove items popup ----------------------------------------------------->
+        <div class="popup" id="remove-item-popup">
+            <h3 id="remove-item-message">Are you sure you want to remove item(s)</h3>
+            <br>
+            <button onclick="removeSelectedItems()">Remove Item(s)</button>
+            <button onclick="closePopup('remove-item-popup')">Cancel</button>
+        </div>
+    </div>
+      <!-- help popup ----------------------------------------------------->
+      <div class="popup" id="help-popup">
+        <h2>Help</h2>
+        <h3>How to add an item to roommate shopping list</h3>
+        <p>
+            <strong>1.</strong> In the homescreen, click on the button titled "shopping list"
+            <br>
+            <strong>2.</strong> This will direct you to a page showing a list of items currently in the shopping list. <br>At the bottom of this list, click the "add item" button
+            <br>
+            <strong>3.</strong> A popup will appear. Enter the name of the item you wish to add.
+            <br>
+            <strong>4.</strong> Click the "add item" button at the bottom of the popup window
+            <br>
+            <strong>5.</strong> The item will appear in the shopping list, along with your username 
+        </p><br>
+        <h3>How to remove items from the roommate shopping list</h3 >
+        <p>
+            <strong>1.</strong> In the homescreen, click on the button titled "shopping list"
+            <br>
+            <strong>2.</strong> This will direct you to a page showing a list of items currently in the shopping list. <br>Ensure the list is not empty before trying to remove an item. 
+            <br>
+            <strong>3.</strong> Select an item by clicking on the box to the left of the item name. A checkmark will appear in the box.
+            <br>
+            <strong>4.</strong> Click the "remove Items(s)" button at the bottom of the shopping list
+            <br>
+            <strong>5.</strong> A popup window will appear asking for confirmation. <br> If you are sure you want to delete the items, click the "remove item(s)" button 
+            <br>
+            <strong>6.</strong> The item(s) you selected will be removed from the shopping list
+        </p>
+        <button onclick="closePopup('help-popup')">Ok!</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="module" src="js/utilities.js"></script>
+    <title>RoomieHub - Utilities</title>
+</head>
+<body onbeforeunload="saveTable()">
+    <div class="horizontal-container">
+        <button class="header-button" onclick="window.location.href='home.html'"><- Return Home</button>
+        <h1>RoomieHub</h1>
+        <button class="header-button" onclick="openPopup('help-popup')">Help</button>
+    </div>
+    <div class="container">
+        <table id="utility-table">
+            <thead>
+                <tr>
+                    <th>Utility</th>
+                    <th>Paid by</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>   
+            </tbody>
+        </table>
+        <div class="horizontal-container">
+            <button onclick="addUtility()">Add Utility</button>
+            <button onclick="checkRemove()">Remove Utility</button>
+        </div>
+        <button onclick="calculateUtilities()">Calculate</button>
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="add-utility-popup">
+            <h3>Add Utility</h3>
+            <input type="text" id="new-utility-input" placeholder="Enter utility name" autofocus>
+            <br>
+            <input type="text" id="payer-input" placeholder="Enter who pays" autofocus>
+            <button onclick="addUtility()">Add Utility</button>
+            <button onclick="closePopup('add-utility-popup')">Cancel</button>
+        </div>
+    </div>   
+</body>
+</html>

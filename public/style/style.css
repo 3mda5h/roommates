@@ -1,0 +1,128 @@
+:root {
+    --light-purple: rgb(185, 179, 255);
+    --dark-purple: rgb(79, 63, 252);
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; 
+    background-color: white;
+}
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50pt;
+}
+span{
+    flex-direction: row;
+}
+.container {
+    background: var(--light-purple);
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+}
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px;
+    border: 0px;
+    align-items: center;
+    border-radius: 8px;
+}
+button {
+    width: 100%;
+    font-size: 17px;
+    padding: 10px;
+    background: var(--dark-purple);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+table {
+    width: 100%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+    border: 5px solid var(--dark-purple);
+}
+tr, th {
+    border-top: 5px solid var(--dark-purple);
+    padding: 10px;
+    text-align: left;
+}
+#utility-table th, tr {
+    text-align: center;
+}
+#utility-table input {
+    border: 2px;
+    border-radius: 4px;
+    border-color: var(--dark-purple);
+}
+td{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+tr.selected {
+    background-color:rgb(225, 223, 254);
+}
+input[type="checkbox"] {
+    transform: scale(2);
+}
+.horizontal-container {  /* elements will be horizontally aligned */
+    display:flex;
+    gap: 10px;
+}
+.horizontal-container button{  /* elements will be horizontally aligned */
+   height: 40%;
+   white-space: nowrap;
+}
+.popup {
+    display: none; /*this hides this element by default*/
+    position: fixed; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    background: var(--light-purple);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000; /*makes sure pop up appears on top of all other elements */
+}
+.popup input {
+    width: 80%;
+    padding: 5px;
+    margin: 10px 0;
+}
+.popup button {
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+/*this grays out the background a bit*/ 
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 999;/*makes sure ovelay appears behind popup but above everything else */
+}
+
+#plus-button{
+    width: 30%;
+}
+
+.header-button{
+    font-size: 22px;
+}
+
+#sign-out-button{
+    width: 10%;
+    margin: 50px;
+}
